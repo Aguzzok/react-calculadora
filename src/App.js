@@ -5,6 +5,7 @@ import '../src/styles/Boton.css'
 import Boton from './componentes/Boton';
 import logo from './imagenes/logofree.png'
 import { useState} from 'react';
+import { evaluate } from 'mathjs';
 
 function App() {
 
@@ -12,6 +13,15 @@ function App() {
 
   const input = valor => {
     valorCalculadora(calculadora + valor);
+  }
+
+  const calcularResultado = () => {
+    if(calculadora){
+    valorCalculadora(evaluate(calculadora));
+   }
+   else{
+    alert("Por favor, ingrese valores para calcular el resultado");
+   }
   }
 
 
@@ -47,7 +57,7 @@ function App() {
           <Boton detectarClick={ input }>*</Boton>
         </div>
         <div className='fila'>
-          <Boton detectarClick={ input }>=</Boton>
+          <Boton detectarClick={ calcularResultado }>=</Boton>
           <Boton detectarClick={ input }>0</Boton>
           <Boton detectarClick={ input }>.</Boton>
           <Boton detectarClick={ input }>/</Boton>
