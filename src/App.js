@@ -3,9 +3,9 @@ import BotonClear from './componentes/Clear';
 import Pantalla from './componentes/Pantalla';
 import '../src/styles/Boton.css'
 import Boton from './componentes/Boton';
-import logo from './imagenes/logofree.png'
 import { useState} from 'react';
 import { evaluate } from 'mathjs';
+import Logo from './componentes/Logo';
 
 function App() {
 
@@ -28,9 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='logo-contenedor'>
-        <img src={logo} alt="logo freecodecamp" className='logo' />
-      </div>
+      <Logo imagen="logofree"/>
       <div className='calculadora-contenedor'>
         <div className='fila'>
           
